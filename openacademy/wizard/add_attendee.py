@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from odoo import api, exceptions, fields, models
 
 
 class AddAttendees(models.TransientModel):
-    _name = 'add_attendee.wizard'
+    _name = 'addattendee.wizard'
     _description = 'Wizard to add attendees to a session'
 
     @api.model
