@@ -28,13 +28,23 @@
                 <header>
                     <button name="action_draft" type="object"
                             string="Reset to draft"
-                            attrs="{'invisible' : [('state', '=', 'draft')] }" groups="openacademy.group_maesters"/>
+                            attrs="{'invisible' : [('state', '=', 'draft')] }" groups="openacademy.group_maesters"
+                    />
                     <button name="action_confirm" type="object"
                             string="Confirm" attrs="{'invisible' : [('state', 'in', ('confirmed', 'done'))] }"
-                            class="oe_highlight" groups="openacademy.group_maesters"/>
+                            class="oe_highlight" groups="openacademy.group_maesters"
+                    />
                     <button name="action_done" type="object"
                             string="Mark as done" attrs="{'invisible' : [('state', 'in', ('draft', 'done'))] }"
-                            class="oe_highlight"/>
+                            class="oe_highlight"
+                    />
+
+                    <button name="create_invoice_teacher"
+                            string="Invoice Teacher"
+                            type="object"
+                            attrs="{'invisible' : [('is_paid', '=', True)]}"/>
+
+
                     <field name="state" widget="statusbar" groups="openacademy.group_maesters"/>
                 </header>
                 <sheet>
@@ -46,11 +56,13 @@
                     </div>
                     <group>
                         <group>
+                            <field name="is_paid" invisible="1"/>
                             <field name="course_id"/>
                             <field name="responsible_id"/>
                             <field name="level"/>
                             <field name="instructor_id"
-                                   domain="['&amp;', ('instructor', '=', True), ('level', '&gt;=', level)]"/>
+                                   domain="['&amp;', ('instructor', '=', True), ('level', '&gt;=', level)]"
+                            />
                             <field name="active"/>
                         </group>
                         <group>
