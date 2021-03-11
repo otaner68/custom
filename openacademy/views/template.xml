@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="index">
+        <title>Academy</title>
+        <t t-foreach="teachers" t-as="teacher">
+            <p><t t-esc="teacher"/></p>
+        </t>
+    </template>
+    <template id="biography">
+        <t t-set="title">Academy</t>
+        <div class="container">
+            <p><t t-esc="person.id"/> <t t-esc="person.name"/></p>
+            <P>start date :<t t-esc="person.start_date"/>" end date :"<t t-esc="person.end_date"/></P>
+            <p>resposible :<t t-esc="person.responsible_id.name"/></p>
+            <p>duration :<t t-esc="person.duration"/></p>
+            <p>instructor :<t t-esc="person.instructor_id.name"/></p>
+            <p>attendees :</p>
+            <t t-foreach="person.attendee_ids" t-as="attendee">
+            <p><t t-esc="attendee.name"/></p>
+            </t>
+        </div>
+
+    </template>
+
+    <template id="index2">
+            <title>Academy</title>
+            <t t-foreach="teachers" t-as="teacher">
+                <p><t t-esc="teacher.id"/> <t t-esc="teacher.name"/></p>
+                <p><a t-attf-href="/academy/{{ slug(teacher) }}">
+                              <t t-esc="teacher.name"/></a>
+                </p>
+            </t>
+        </template>
+<!--    <div class="oe_structure">-->
+<!--                    <div class="container">-->
+<!--                        <t t-foreach="teachers" t-as="teacher">-->
+<!--                            <p><a t-attf-href="/academy/{{ slug(teacher) }}">-->
+<!--                              <t t-esc="teacher.name"/></a>-->
+<!--                            </p>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="oe_structure"/>-->
+<!--                <div class="oe_structure">-->
+<!--                    <div class="container">-->
+<!--                        <h3><t t-esc="person.name"/></h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="oe_structure"/>-->
+</odoo>

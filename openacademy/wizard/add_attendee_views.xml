@@ -19,12 +19,20 @@
         </field>
     </record>
 
-    <act_window id="add_attendees_action"
-                name="Add Attendees"
-                binding_model="res.partner"
-                res_model="add_attendee.wizard"
-                binding_views="list"
-                view_mode="form"
-                target="new"/>
+    <record id="launch_session_wizard" model="ir.actions.act_window">
+            <field name="name">Add Attendees</field>
+            <field name="res_model">add_attendee.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_openacademy_session"/>
+        </record>
+
+<!--    <act_window id="add_attendees_action"-->
+<!--                name="Add Attendees"-->
+<!--                binding_model="res.partner"-->
+<!--                res_model="add_attendee.wizard"-->
+<!--                binding_views="list"-->
+<!--                view_mode="form"-->
+<!--                target="new"/>-->
 
 </odoo>

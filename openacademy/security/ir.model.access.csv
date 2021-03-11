@@ -6,3 +6,4 @@ session_read_all,Session All,model_openacademy_session,group_apprentices,1,0,0,0
 course_read_public,Course All,model_openacademy_course,,1,0,0,0
 session_read_public,Session All,model_openacademy_session,,1,0,0,0
 partner_read_public,Course All,model_res_partner,,1,0,0,0
+add_attendee_wizard,Add attendee,model_add_attendee_wizard,,1,1,1,1

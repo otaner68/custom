@@ -44,7 +44,6 @@
                             type="object"
                             attrs="{'invisible' : [('is_paid', '=', True)]}"/>
 
-
                     <field name="state" widget="statusbar" groups="openacademy.group_maesters"/>
                 </header>
                 <sheet>
